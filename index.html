@@ -3,8 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arjun S Pai | Full-Stack & AI Engineer</title>
+    <title>Arjun S. Pai | Full-Stack & AI Engineer</title>
+
+    <!-- SEO + Social -->
+    <meta name="description" content="Arjun S. Pai — Full-Stack & AI Engineer building immersive 3D web experiences powered by GenAI. Explore projects, skills, and open internship opportunities.">
+    <meta name="theme-color" content="#020202">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Arjun S. Pai | Full-Stack & AI Engineer">
+    <meta property="og:description" content="Architecting scalable web experiences with Three.js and GenAI.">
+    <meta property="og:url" content="https://asp-31.github.io/portfolio">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Arjun S. Pai | Full-Stack & AI Engineer">
+    <meta name="twitter:description" content="Architecting scalable web experiences with Three.js and GenAI.">
+
     <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <!-- Using GSAP & ScrollTrigger for premium animations -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
@@ -12,13 +27,17 @@
 </head>
 <body>
     <!-- 3D Background Container -->
-    <canvas id="bg"></canvas>
+    <canvas id="bg" aria-hidden="true"></canvas>
 
     <!-- Global Navigation -->
-    <nav class="navbar glass">
+    <nav class="navbar glass" aria-label="Primary">
         <h1 class="logo">ASP<span class="highlight">.</span></h1>
+        <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+            <span></span><span></span><span></span>
+        </button>
         <ul class="nav-links">
             <li><a href="#about">About</a></li>
+            <li><a href="#journey">Journey</a></li>
             <li><a href="#projects">Work</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
@@ -26,17 +45,21 @@
 
     <!-- Scroll Container -->
     <main class="scroll-container">
-        
+
         <!-- Hero Section -->
         <section class="hero section-padding">
             <div class="content-wrapper">
                 <span class="badge fade-up">Full-Stack & AI Engineer</span>
                 <h1 class="headline fade-up">Arjun S. Pai</h1>
-                <p class="subtitle fade-up">Architecting scalable solutions with <span class="highlight">Three.js</span> and <span class="highlight">GenAI</span>. I blend immersive 3D web experiences with powerful artificial intelligence backends.</p>
+                <p class="subtitle fade-up">Hiring-ready full-stack intern. I architect scalable solutions with <span class="highlight">Three.js</span> and <span class="highlight">GenAI</span>, shipping 3D web experiences backed by powerful AI services.</p>
                 <div class="cta-group fade-up">
                     <a href="#projects" class="btn-primary">Explore My Work</a>
-                    <a href="https://github.com/ASP-31" target="_blank" class="btn-secondary">GitHub Profile</a>
+                    <a href="https://github.com/ASP-31" target="_blank" rel="noopener" class="btn-secondary">GitHub Profile</a>
+                    <a href="https://www.linkedin.com/in/arjun-s-pai-263834327/" target="_blank" rel="noopener" class="btn-secondary">LinkedIn</a>
                 </div>
+                <span class="availability fade-up">
+                    <span class="dot"></span> Open to Software, Frontend &amp; AI internships
+                </span>
             </div>
         </section>
 
@@ -45,7 +68,7 @@
             <div class="content-wrapper glass">
                 <h2 class="section-title fade-up">Technical <span class="highlight">Matrix</span></h2>
                 <p class="desc fade-up">Building the future of the web requires a versatile toolkit. I specialize in bridging the gap between sophisticated AI models and beautiful user interfaces.</p>
-                
+
                 <div class="skills-grid fade-up">
                     <div class="skill-category">
                         <h3>Frontend</h3>
@@ -67,11 +90,39 @@
             </div>
         </section>
 
+        <!-- Journey: Experience & Education -->
+        <section id="journey" class="journey section-padding">
+            <div class="content-wrapper">
+                <h2 class="section-title fade-up">My <span class="highlight">Journey</span></h2>
+
+                <div class="timeline">
+                    <div class="timeline-card glass fade-up">
+                        <span class="timeline-tag">Education</span>
+                        <h3>B.Tech Computer Science</h3>
+                        <p class="timeline-meta">Expected 2027</p>
+                        <p>Focus on full-stack development, AI/ML integration, and building production software through hands-on projects.</p>
+                    </div>
+                    <div class="timeline-card glass fade-up">
+                        <span class="timeline-tag">Selected Work</span>
+                        <h3>6+ shipped projects</h3>
+                        <p class="timeline-meta">deconstruct.ai · MorningMailAI · LeetLog · Wellness Wizard</p>
+                        <p>From AI dashboards to productivity extensions — each one engineered solo, end to end, with clean architecture and real-world APIs.</p>
+                    </div>
+                    <div class="timeline-card glass fade-up">
+                        <span class="timeline-tag">Now</span>
+                        <h3>Seeking an internship</h3>
+                        <p class="timeline-meta">Software · Frontend · AI Engineer</p>
+                        <p>I move fast, pick up new tools quickly, and ship. Currently looking for a team where I can contribute from day one.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Projects Section -->
         <section id="projects" class="projects section-padding">
             <div class="content-wrapper">
                 <h2 class="section-title fade-up">Featured <span class="highlight">Deployments</span></h2>
-                
+
                 <div class="project-list">
                     <!-- Project 1: deconstruct.ai -->
                     <div class="project-card glass fade-up">
@@ -79,7 +130,7 @@
                             <span class="project-tech">Next.js • Monaco Editor • Gemini API</span>
                             <h3>deconstruct.ai</h3>
                             <p>An AI-powered reverse-engineering dashboard that ingests full codebases, maps dependencies, and automatically generates interactive architectural slide decks, performance analysis, and contextual code walkthroughs.</p>
-                            <a href="https://github.com/ASP-31/deconstruct.ai" target="_blank" class="btn-text">View Source &rarr;</a>
+                            <a href="https://github.com/ASP-31/deconstruct.ai" target="_blank" rel="noopener" class="btn-text">View Source &rarr;</a>
                         </div>
                     </div>
 
@@ -89,7 +140,7 @@
                             <span class="project-tech">FastAPI • Python • LLMs</span>
                             <h3>MorningMailAI</h3>
                             <p>AI-powered personalized morning email digest with FastAPI, LLMs, scheduling, and intelligent filtering to deliver tailored daily insights.</p>
-                            <a href="https://github.com/ASP-31/MorningMailAI" target="_blank" class="btn-text">View Source &rarr;</a>
+                            <a href="https://github.com/ASP-31/MorningMailAI" target="_blank" rel="noopener" class="btn-text">View Source &rarr;</a>
                         </div>
                     </div>
 
@@ -99,7 +150,7 @@
                             <span class="project-tech">JavaScript • Chrome Extension • Notion API</span>
                             <h3>LeetLog</h3>
                             <p>A productivity automation tool that bridges the gap between solving problems on LeetCode and tracking progress in Notion. It transforms a manual logging process into a seamless one-click experience.</p>
-                            <a href="https://github.com/ASP-31/LeetLog" target="_blank" class="btn-text">View Source &rarr;</a>
+                            <a href="https://github.com/ASP-31/LeetLog" target="_blank" rel="noopener" class="btn-text">View Source &rarr;</a>
                         </div>
                     </div>
 
@@ -109,7 +160,7 @@
                             <span class="project-tech">React • Node.js • Gemini API</span>
                             <h3>Wellness Wizard</h3>
                             <p>AI-powered dietary assistant that extracts macro-nutrients from food images with high precision. Integrates directly with the Gemini Vision API.</p>
-                            <a href="https://github.com/ASP-31/Wellness-Wizard" target="_blank" class="btn-text">View Source &rarr;</a>
+                            <a href="https://github.com/ASP-31/Wellness-Wizard" target="_blank" rel="noopener" class="btn-text">View Source &rarr;</a>
                         </div>
                     </div>
 
@@ -119,7 +170,7 @@
                             <span class="project-tech">Python • AI Logic • JavaScript</span>
                             <h3>AirPro</h3>
                             <p>An intelligent pollution investigation engine leveraging AI confidence scores to report and analyze environmental data.</p>
-                            <a href="https://github.com/ASP-31/AirPro" target="_blank" class="btn-text">View Source &rarr;</a>
+                            <a href="https://github.com/ASP-31/AirPro" target="_blank" rel="noopener" class="btn-text">View Source &rarr;</a>
                         </div>
                     </div>
 
@@ -129,7 +180,7 @@
                             <span class="project-tech">Node.js • Express • MongoDB</span>
                             <h3>CodeVault</h3>
                             <p>A centralized, hyper-fast hub for developers to manage and share reusable code snippets securely.</p>
-                            <a href="https://github.com/ASP-31/Codevault" target="_blank" class="btn-text">View Source &rarr;</a>
+                            <a href="https://github.com/ASP-31/Codevault" target="_blank" rel="noopener" class="btn-text">View Source &rarr;</a>
                         </div>
                     </div>
                 </div>
@@ -140,8 +191,11 @@
         <section id="contact" class="contact section-padding center-align">
             <div class="content-wrapper glass">
                 <h2 class="section-title fade-up">Ready to <span class="highlight">Collaborate?</span></h2>
-                <p class="desc fade-up">I am always open to discussing product design work or partnership opportunities. Let's create something extraordinary.</p>
-                <a href="mailto:asp31.2006@gmailcom" class="btn-primary fade-up">Initiate Contact</a>
+                <p class="desc fade-up">I am always open to discussing product design work or internship opportunities. Let's create something extraordinary.</p>
+                <div class="cta-group justify-center fade-up">
+                    <a href="mailto:asp31.2006@gmail.com?subject=Inquiry%20from%20your%20portfolio" class="btn-primary">Initiate Contact</a>
+                    <a href="https://www.linkedin.com/in/arjun-s-pai-263834327/" target="_blank" rel="noopener" class="btn-secondary">Connect on LinkedIn</a>
+                </div>
             </div>
         </section>
 
