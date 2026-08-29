@@ -561,8 +561,19 @@ textarea:focus-visible {
         font-size: 1.2rem;
     }
 
-    .navbar.open .nav-links {
-        transform: translateX(0);
+    .project-list {
+        grid-template-columns: 1fr;
+        grid-auto-rows: auto;
+    }
+
+    .project-card.featured,
+    .project-card.tall {
+        grid-column: span 1;
+        grid-row: span 1;
+    }
+
+    .cursor-ring, .cursor-dot {
+        display: none;
     }
 }
 
