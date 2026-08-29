@@ -6,7 +6,7 @@
     <title>Arjun S. Pai | Full-Stack & AI Engineer</title>
 
     <!-- SEO + Social -->
-    <meta name="description" content="Arjun S. Pai — Full-Stack & AI Engineer building immersive 3D web experiences powered by GenAI. Explore projects, skills, and open internship opportunities.">
+    <meta name="description" content="Arjun S. Pai — Full-Stack & AI Engineer building immersive 3D web experiences powered by GenAI. Explore projects, skills, and professional opportunities.">
     <meta name="theme-color" content="#020202">
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <meta property="og:type" content="website">
@@ -20,12 +20,19 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Outfit:wght@400;600&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <!-- Using GSAP & ScrollTrigger for premium animations -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <!-- Lenis for smooth scrolling -->
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.33/dist/lenis.min.js"></script>
 </head>
-<body>
+<body class="noise-bg">
+    <!-- Noise Overlay -->
+    <div class="noise-overlay"></div>
+    <!-- Custom Cursor -->
+    <div class="cursor-dot"></div>
+    <div class="cursor-ring"></div>
     <!-- 3D Background Container -->
     <canvas id="bg" aria-hidden="true"></canvas>
 
@@ -51,14 +58,14 @@
             <div class="content-wrapper">
                 <span class="badge fade-up">Full-Stack & AI Engineer</span>
                 <h1 class="headline fade-up">Arjun S. Pai</h1>
-                <p class="subtitle fade-up">Hiring-ready full-stack intern. I architect scalable solutions with <span class="highlight">Three.js</span> and <span class="highlight">GenAI</span>, shipping 3D web experiences backed by powerful AI services.</p>
+                <p class="subtitle fade-up">Full-Stack & AI Engineer. I architect scalable solutions with <span class="highlight">Three.js</span> and <span class="highlight">GenAI</span>, shipping 3D web experiences backed by powerful AI services.</p>
                 <div class="cta-group fade-up">
                     <a href="#projects" class="btn-primary">Explore My Work</a>
                     <a href="https://github.com/ASP-31" target="_blank" rel="noopener" class="btn-secondary">GitHub Profile</a>
                     <a href="https://www.linkedin.com/in/arjun-s-pai-263834327/" target="_blank" rel="noopener" class="btn-secondary">LinkedIn</a>
                 </div>
                 <span class="availability fade-up">
-                    <span class="dot"></span> Open to Software, Frontend &amp; AI internships
+                    <span class="dot"></span> Open to Software, Frontend &amp; AI roles
                 </span>
             </div>
         </section>
@@ -96,6 +103,7 @@
                 <h2 class="section-title fade-up">My <span class="highlight">Journey</span></h2>
 
                 <div class="timeline">
+                    <div class="progress-line"></div>
                     <div class="timeline-card glass fade-up">
                         <span class="timeline-tag">Education</span>
                         <h3>B.Tech Computer Science</h3>
@@ -110,7 +118,7 @@
                     </div>
                     <div class="timeline-card glass fade-up">
                         <span class="timeline-tag">Now</span>
-                        <h3>Seeking an internship</h3>
+                        <h3>Available for Work</h3>
                         <p class="timeline-meta">Software · Frontend · AI Engineer</p>
                         <p>I move fast, pick up new tools quickly, and ship. Currently looking for a team where I can contribute from day one.</p>
                     </div>
@@ -125,7 +133,7 @@
 
                 <div class="project-list">
                     <!-- Project 1: deconstruct.ai -->
-                    <div class="project-card glass fade-up">
+                    <div class="project-card glass fade-up featured">
                         <div class="project-info">
                             <span class="project-tech">Next.js • Monaco Editor • Gemini API</span>
                             <h3>deconstruct.ai</h3>
@@ -145,7 +153,7 @@
                     </div>
 
                     <!-- Project 3: LeetLog -->
-                    <div class="project-card glass fade-up">
+                    <div class="project-card glass fade-up tall">
                         <div class="project-info">
                             <span class="project-tech">JavaScript • Chrome Extension • Notion API</span>
                             <h3>LeetLog</h3>
@@ -191,7 +199,7 @@
         <section id="contact" class="contact section-padding center-align">
             <div class="content-wrapper glass">
                 <h2 class="section-title fade-up">Ready to <span class="highlight">Collaborate?</span></h2>
-                <p class="desc fade-up">I am always open to discussing product design work or internship opportunities. Let's create something extraordinary.</p>
+                <p class="desc fade-up">I am always open to discussing product design work or professional opportunities. Let's create something extraordinary.</p>
                 <div class="cta-group justify-center fade-up">
                     <a href="mailto:asp31.2006@gmail.com?subject=Inquiry%20from%20your%20portfolio" class="btn-primary">Initiate Contact</a>
                     <a href="https://www.linkedin.com/in/arjun-s-pai-263834327/" target="_blank" rel="noopener" class="btn-secondary">Connect on LinkedIn</a>

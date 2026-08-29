@@ -1,5 +1,6 @@
 :root {
     --primary: #00f2ff;
+    --primary-gradient: linear-gradient(135deg, #00f2ff 0%, #7000ff 50%, #bc00ff 100%);
     --primary-dim: rgba(0, 242, 255, 0.15);
     --bg-color: #020202;
     --glass-bg: rgba(10, 10, 15, 0.3);
@@ -15,13 +16,12 @@
 }
 
 html {
-    scroll-behavior: smooth;
 }
 
 body {
     background-color: var(--bg-color);
     color: var(--text-main);
-    font-family: 'Inter', sans-serif;
+    font-family: 'Outfit', sans-serif;
     overflow-x: hidden;
 }
 
@@ -41,6 +41,50 @@ body {
     pointer-events: none;
 }
 
+/* Noise Overlay */
+.noise-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    pointer-events: none;
+    opacity: 0.05;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+/* Custom Cursor */
+.cursor-dot, .cursor-ring {
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 9999;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.cursor-dot {
+    width: 6px;
+    height: 6px;
+    background: var(--text-main);
+}
+
+.cursor-ring {
+    width: 30px;
+    height: 30px;
+    border: 1px solid var(--text-main);
+    transition: width 0.3s, height 0.3s, background 0.3s;
+}
+
+.cursor-ring.active {
+    width: 60px;
+    height: 60px;
+    background: var(--primary-gradient);
+    border-color: transparent;
+}
+
 /* Glassmorphism utility */
 .glass {
     background: var(--glass-bg);
@@ -52,11 +96,15 @@ body {
 
 /* Typography */
 .highlight {
-    color: var(--primary);
+    background: var(--primary-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
 }
 
 .section-title {
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: 'Syne', sans-serif;
     font-size: clamp(2rem, 5vw, 3rem);
     margin-bottom: 1.5rem;
     letter-spacing: -1px;
@@ -78,7 +126,7 @@ body {
 }
 
 .logo {
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: 'Syne', sans-serif;
     font-size: 1.8rem;
     font-weight: 700;
     letter-spacing: -1px;
@@ -155,7 +203,7 @@ body {
 
 /* Hero Section */
 .hero .headline {
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: 'Syne', sans-serif;
     font-size: clamp(3rem, 9vw, 5.5rem);
     font-weight: 700;
     line-height: 1.1;
@@ -214,8 +262,8 @@ body {
     text-transform: uppercase;
     letter-spacing: 2px;
     margin-bottom: 2rem;
-    background: var(--primary-dim);
-    color: var(--primary);
+    background: var(--primary-gradient);
+    color: #000;
     border: 1px solid rgba(0, 242, 255, 0.3);
 }
 
@@ -320,13 +368,15 @@ body {
 
 /* Projects Section */
 .projects .content-wrapper {
-    max-width: 1000px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .project-list {
-    display: flex;
-    flex-direction: column;
-    gap: 3rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: minmax(300px, auto);
+    gap: 2rem;
     margin-top: 3rem;
 }
 
@@ -334,6 +384,18 @@ body {
     padding: 3rem;
     text-align: left;
     transition: transform 0.4s ease, border-color 0.4s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.project-card.featured {
+    grid-column: span 2;
+    grid-row: span 2;
+}
+
+.project-card.tall {
+    grid-row: span 2;
 }
 
 .project-card:hover {
@@ -350,7 +412,7 @@ body {
 }
 
 .project-info h3 {
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: 'Syne', sans-serif;
     font-size: 2.2rem;
     margin: 0.5rem 0 1rem 0;
 }
@@ -372,6 +434,18 @@ body {
     display: grid;
     gap: 2rem;
     margin-top: 2.5rem;
+    position: relative;
+}
+
+.progress-line {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 3px;
+    height: 0%;
+    background: var(--primary-gradient);
+    z-index: -1;
+    transform-origin: top;
 }
 
 .timeline-card {
@@ -400,7 +474,7 @@ body {
 }
 
 .timeline-card h3 {
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: 'Syne', sans-serif;
     font-size: 1.5rem;
     margin-bottom: 0.4rem;
 }
