@@ -394,10 +394,6 @@ body {
     grid-row: span 2;
 }
 
-.project-card.tall {
-    grid-row: span 2;
-}
-
 .project-card:hover {
     transform: translateY(-5px);
     border-color: rgba(0, 242, 255, 0.3);
@@ -423,6 +419,114 @@ body {
     line-height: 1.6;
     margin-bottom: 1.5rem;
     max-width: 600px;
+}
+
+/* Case framing: one-line problem hook above the description */
+.project-info .project-problem {
+    color: var(--text-main);
+    font-weight: 600;
+    font-size: 1rem;
+    margin-bottom: 0.75rem;
+}
+
+/* Engineering pipelines */
+.pipeline-card {
+    padding: 2.5rem;
+    margin-bottom: 2.5rem;
+}
+
+.pipeline {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    flex-wrap: wrap;
+}
+
+.pipeline-step {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    background: var(--primary-dim);
+    border: 1px solid rgba(0, 242, 255, 0.25);
+    border-radius: 14px;
+    padding: 12px 16px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.step-num {
+    font-size: 0.7rem;
+    color: var(--primary);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+}
+
+.pipeline-arrow {
+    color: var(--primary);
+    font-weight: 700;
+}
+
+.pipeline-note {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-top: 1.2rem;
+    max-width: 640px;
+}
+
+/* Second-tier project list */
+.more-projects {
+    margin-top: 4rem;
+}
+
+.more-title {
+    font-family: 'Syne', sans-serif;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--text-muted);
+    margin-bottom: 0.75rem;
+}
+
+.more-project {
+    display: grid;
+    grid-template-columns: 180px 1fr auto;
+    gap: 1.5rem;
+    align-items: baseline;
+    padding: 1.1rem 0;
+    border-bottom: 1px solid var(--glass-border);
+    text-decoration: none;
+    color: var(--text-main);
+    transition: border-color 0.3s ease;
+}
+
+.more-project:hover {
+    border-color: rgba(0, 242, 255, 0.4);
+}
+
+.more-name {
+    font-weight: 600;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.more-project:hover .more-name {
+    color: var(--primary);
+}
+
+.more-desc {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.more-link {
+    color: var(--primary);
+    font-weight: 600;
+    font-size: 0.9rem;
+    white-space: nowrap;
 }
 
 /* Journey / Timeline Section */
@@ -566,10 +670,14 @@ textarea:focus-visible {
         grid-auto-rows: auto;
     }
 
-    .project-card.featured,
-    .project-card.tall {
+    .project-card.featured {
         grid-column: span 1;
         grid-row: span 1;
+    }
+
+    .more-project {
+        grid-template-columns: 1fr;
+        gap: 0.3rem;
     }
 
     .cursor-ring, .cursor-dot {
